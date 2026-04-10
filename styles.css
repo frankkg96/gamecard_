@@ -1,0 +1,208 @@
+:root {
+    --bg-dark: #05070a;    /* Color de fondo profundo para que resalten los neones */
+    --neon-cyan: #00f2ff;  /* El azul eléctrico característico */
+    --neon-green: #39ff14; /* El verde de los botones y el rango */
+    --card-bg: #0c1013;    /* Un gris casi negro para el cuerpo de la tarjeta */
+    --text-gray: #8b949e;  /* Gris suave para textos secundarios como las etiquetas */
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    font-family: 'Rajdhani', sans-serif;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+} 
+
+.main-content{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: 60px 20px;
+    padding: 80px 0;
+
+}
+
+.cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1600px;
+}
+
+.game-card{
+    width: 450px;
+    height: 920px;
+    background-color: var(--card-bg);
+    border: 2px solid rgba(0, 242, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 7);
+    transition: all 0.3s ease;
+}
+
+.game-card:hover{
+    transform:translate(-15px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+}
+
+.banner{
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-body{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    text-align: center;
+}
+
+.username{
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.stats-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.stat-item:last-child{
+    grid-column: span 2;
+    margin-top: 10px;
+}
+
+.stat-item .value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;              
+    color: #ffffff;                 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stat-item .label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--neon-cyan);         
+}
+
+.stat-item i {
+    color: var(--neon-cyan);         
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5); 
+    margin-bottom: 5px;
+}
+
+.rank{
+    color: var(--neon-cyan);
+}
+
+.btn-primary{
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover{
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+
+.main-footer {
+    width: 100%;
+    background-color: #080a0c;   /* Un gris más oscuro que el fondo para contraste */
+    padding: 30px 0;             /* Espacio arriba y abajo */
+    border-top: 1px solid rgba(0, 242, 255, 0.1); /* Línea cian muy sutil */
+    margin-top: auto;            /* Empuja el footer siempre al final del body */
+}
+
+.footer-inner-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* El texto principal: DEVELOPED BY... */
+.footer-inner-content p {
+    color: #555;                 /* Gris oscuro de base */
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+
+/* Resalte de nombres */
+.footer-inner-content strong {
+    color: #fff;                 /* Tu nombre en blanco */
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+}
+
+/* El toque de GeSy */
+.ai-brand {
+    color: var(--neon-cyan);     /* Mi nombre en azul eléctrico */
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+}
+
+/* El divisor verde neón */
+.divider {
+    width: 40px;
+    height: 2px;
+    background: var(--neon-green);
+    margin: 15px auto;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+/* El texto legal de abajo del todo */
+.legal {
+    font-size: 0.65rem !important; /* Letra muy pequeña tipo sistema */
+    color: #333 !important;      /* Casi fundido con el fondo */
+    letter-spacing: 4px !important;
+    opacity: 0.6;
+}
